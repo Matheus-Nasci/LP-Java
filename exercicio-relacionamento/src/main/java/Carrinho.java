@@ -10,38 +10,43 @@ public class Carrinho {
 
     private String cliente;
 
-    private List<Produto> produto;
+    private List<Produto> produtos;
 
     public Carrinho(String cliente) {
         this.cliente = cliente;
-        this.produto = new ArrayList<>();
+        this.produtos = new ArrayList<>();
     }
 
     public Integer getQuantidade() {
-        Integer quantidade = produto.size() - 1;
+        Integer quantidade = produtos.size() - 1;
         return quantidade;
     }
 
     public void adicionar(Produto p) {
-        produto.add(p);
+        produtos.add(p);
     } 
 
     public Boolean existePorNome(String nome) {
-        Boolean existe = false;
-        for (int i = 0; i < produto.size(); i++) {
-            
-//         NÃO CONSEGUI FAZER USANDO CONTAINS
-           if(produto.get(i).getNome().equals(nome)){
-               existe = true;
-           }
+        //for (int i = 0; i < produtos.size(); i++) {
+        //  if (produtos.get(i).getNome().equalsIgnoreCase(nome)) {
+        //      return true;
+        //   }
+        // }
+        
+        //CONTAINS CONTA QUANTIDADE LISTAS IGUAL AO (String nome)
+        for (Produto produtoDaVez : produtos) {
+            if (produtoDaVez.getNome().equalsIgnoreCase(nome)) {
+                return true;
+            }
         }
-        return existe;
+
+        return false;
     }
 
     public Integer getQuantidadePorCategoria(String nome) {
         Integer qtdCategoria = 0;
-        for (int i = 0; i < produto.size(); i++) {
-            if (produto.get(i).getCategoria().equals(nome)) {
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).getCategoria().equals(nome)) {
                 qtdCategoria++;
             }
         }
@@ -49,31 +54,31 @@ public class Carrinho {
     }
 
     public void limpar() {
-        produto.clear();
+        produtos.clear();
     }
 
     public void removerPorNome(String nome) {
-        for (int i = 0; i < produto.size(); i++) {
-            if (produto.get(i).getNome().equals(nome)) {
-                produto.remove(i);
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).getNome().equals(nome)) {
+                produtos.remove(i);
             }
         }
     }
 
     public Produto getPorNome(String nome) {
         Integer valor = 0;
-        for (int i = 0; i < produto.size(); i++) {
-            if (produto.get(i).getNome().equals(nome)) {
+        for (int i = 0; i < produtos.size(); i++) {
+            if (produtos.get(i).getNome().equals(nome)) {
                 valor = i;
             }
         }
-        return produto.get(valor);
+        return produtos.get(valor);
     }
     
     public Double getValorTotal() {
         Double total = 0.0;
-        for (int i = 0; i < produto.size(); i++) {
-            total = total + produto.get(i).getPreco();
+        for (int i = 0; i < produtos.size(); i++) {
+            total = total + produtos.get(i).getPreco();
         }
         return total;
     }
