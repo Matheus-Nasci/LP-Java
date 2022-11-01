@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.heranca;
 
 /**
@@ -52,7 +48,9 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return String.format("RA: %s\nNome: %s\nNota 1: %.1f\nNota 2: %.1f", this.ra, this.nome, this.nota1, this.nota2);
+        return String.format("RA: %s\nNome: %s\nNota 1: %.1f\nNota 2: "
+                + "%.1f", this.ra, this.nome, this.nota1, 
+                this.nota2);
     }
 
 }

@@ -13,8 +13,13 @@ public class App {
                 10.0, 9.0, 7.6, 7.6);
 
         System.out.println(aluno);
+        System.out.println(String.format("A média do %s é: %.1f"
+                , aluno.getNome(), aluno.calcularMedia()));
+        
+        System.out.println("-".repeat(25));
+        
         System.out.println(alunoGraduacao);
-        System.out.println(String.format("A média do %s é: %.1f", aluno.getNome(), aluno.calcularMedia()));
-        System.out.println(String.format("A média do %s é: %.1f", alunoGraduacao.getNome(), alunoGraduacao.calcularMedia()));
+        System.out.println(String.format("A média do %s é: %.1f"
+                , alunoGraduacao.getNome(), alunoGraduacao.calcularMedia()));
     }
 }

@@ -18,9 +18,8 @@ public class AlunoGraduacao extends Aluno {
 
     @Override
     public Double calcularMedia() {
-        return (this.getNota2() + this.getNota2() + notaIntegrada + notaContinuada);
+        return (this.getNota1() + this.getNota2() + notaIntegrada + notaContinuada) / 4;
     }
-    
     
     public Double getNotaIntegrada() {
         return notaIntegrada;
@@ -38,4 +37,13 @@ public class AlunoGraduacao extends Aluno {
         this.notaContinuada = notaContinuada;
     }
 
+    @Override
+    public String toString() {
+        return String.format("RA: %s\nNome: %s\nNota 1: %.1f\nNota 2:"
+                + " %.1f\nNota Integrada: %.1f\nNota Continuada: %.1f", 
+                this.getRa(), this.getNome(), this.getNota1(), 
+                this.getNota2(), this.notaIntegrada, this.notaContinuada);
+    }
+    
+    
 }
