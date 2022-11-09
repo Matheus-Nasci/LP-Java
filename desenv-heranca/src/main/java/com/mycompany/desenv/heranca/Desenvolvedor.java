@@ -9,11 +9,16 @@ public class Desenvolvedor {
     protected Integer qtdHorasTrabalhadas;
     protected Double valorHoraTrabalhada;
 
-    public Desenvolvedor(String nome, Integer qtdHorasTrabalhadas, Double valorHoraTrabalhada) {
+    public Desenvolvedor(String nome) {
         this.nome = nome;
-        this.qtdHorasTrabalhadas = qtdHorasTrabalhadas;
-        this.valorHoraTrabalhada = valorHoraTrabalhada;
+        this.qtdHorasTrabalhadas = 0;
+        this.valorHoraTrabalhada = 23.50;
     }
+    
+    public void trabalhar(Integer horas, Double valor){
+        qtdHorasTrabalhadas = qtdHorasTrabalhadas + horas;
+        valorHoraTrabalhada = valorHoraTrabalhada + valor;
+    }   
     
     public Double getSalario(){
         return qtdHorasTrabalhadas * valorHoraTrabalhada;

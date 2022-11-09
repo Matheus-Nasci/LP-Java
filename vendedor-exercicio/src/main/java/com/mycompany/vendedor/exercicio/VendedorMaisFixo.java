@@ -12,7 +12,7 @@ public class VendedorMaisFixo extends VendedorComissao {
         super(codigo, nome, venda, taxa);
         this.salarioFixo = salarioFixo;
     }
-
+    
     public Double calcularSalario() {
         return salarioFixo = salarioFixo + (this.getVenda() * (this.getTaxa() / 100));
     }
